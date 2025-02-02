@@ -10,3 +10,99 @@ We no longer need to explicitly create an application context using AnnotationCo
 We use SpringApplication.run() to start the application, and SpringBoot takes care of configuring the embedded web server and other necessary components.
 The @SpringBootApllication annotation alone brings in a lot of pre-configured features,including automatic component scanning and embedded server configuration, which would have required more steps in a traditional Spring setup.
 bean is a single object which is not reinitialised, and application context will provide that bean.
+
+We use spring initializr website to initialise our springBoot project.
+Langauge-JAVA
+MAVEN to build automation toaol which helps in managing dependency.
+packaging:
+jar-java archive 
+war- website application archive
+Difference between them is if you want to run jar then you can run it by simply executing command where as for war you need to deploy it on external server to run.
+
+
+PID is a process ID.
+linux command
+ps aux | grep PID
+ps-process status
+aux-provide list of all process running on system
+|-pipe means connecting two commands
+grep- search pattern 
+
+to create api you have to use 
+@RestController annotation
+eg:
+@RestController
+public class MyClass {
+
+    @GetMapping("abc")
+    public String sayHello(){
+        return "Hello";
+    }
+}
+
+context path is usually project name which is after localhost and port number
+eg: localhost:8080/My-project/abc
+so here My-project is context.
+
+using maven repository we can download any jar files
+it consists of groupId, artifactId and version.
+
+Maven manages dependency and second is it is build automation tool.
+
+Build Lifecycle
+1)validate-validate the project is correct and all necessary information is available.
+2)compile-compile the source code of the project.
+3)test-test the compiled source code using a suitable unit testing framework.Tese tests should not require the code be packaged or deployed.
+4)package-take the compiled code and package it in its distribution format like jar or war
+5)verify-run any checks on results of integration tests to ensure quality criteria are met.
+6)install-install the package into the local repository, for use as a dependency in other projects
+7)deploy-done in the build environment, copies the final package to the remote repository
+
+command for validate
+mvn validate if maven installed
+.\mvnw validate for maven wrapper
+
+command for build
+maven wrapper- ".\mvnw.cmd compile"
+
+command for test
+".\mvnw.cmd test"
+
+package
+".\mvnw.cmd package"
+
+to run jar
+go to location of jar
+java -jar name of jar
+
+".\mvnw.cmd install" install packages in local m2 repository.
+
+.\mvnw.cmd clean- to clean target folder.
+
+".\mvnw.cmd package" will validate,compile,test and will create jar as well.
+
+pom.xml means its build tool is maven.
+
+structure of spring boot project
+1).idea this is related to intellij idea
+2).mvn is related to maven wrapper
+3)src has two folder main and test
+3a).gitignore helps you ignore while commiting
+3b)Help.md is documentation file
+3a1)main contains core logic
+3a2)test contains corresponding testcases.
+3a3)In main we have two folders java and resources
+3a4)in java we write code
+3a5)in resources we have static which is used to store images
+then application properties which is used to store configuration like mongodb configuration which you gonna use inside code.
+templates was used earlier when we used to create html pages in java.
+4)pom.xml this contains everything regarding project like how it will be build, what kind of external libraries we are using.
+plugins help your code in packaging into jar or war.
+parents brings requires dependenciesa and required plugins.
+5)target
+contains jar files which consists of compile code as well as dependencies which are required to run project
+we have two jar original and just jar
+where original jar just contains compile code whereas jar contains compile code as well as dependencies which are required to run project(self contained jar or fat jar)
+-Repackaging means it will create original jar and after that it will create fat or self contained jar containing all the dependencies
+
+
