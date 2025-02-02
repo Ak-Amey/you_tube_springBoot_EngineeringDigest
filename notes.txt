@@ -1,0 +1,12 @@
+Spring Boot is a framework for building applications in the java programming languages.
+ Spring Boot makes it easy to create standalone, production-grade Spring based Applications that you can just run.
+The core Spring framework already reduces boilerplate code and provides a lot of helpfu; features for JAVA applications, but still in spring we have to manually configure eg installing tomcat server to run jar files, which was challenging task, here comes springBoot which focuses on reducing the effort required to set up and configure a Spring application.
+While Spring does simplifies many tasks like creating web applications, working with databases, managing transactions and more but setting up of spring projects still involve quite a bit of manual configuration.
+SpringBoot helps in auto configuration and Standalone Applications.
+Earlier to run jar files in spring one needs to install tomcat server which makes it dependent on external server where as now in SpringBoot you have embedded TomCat Server which makes it independent of external environment/infrastructure.
+Earlier we had to install tomcat(web server) on server and need to configure tomcat server and then deploy it, so what use to happen was call would go to tomcat server and then to spring api endpoint.
+We use the @SpringBootApplication annotation(means giving hint) on the main class. This single annotation replaces the need for setting up a manual Spring application context.
+We no longer need to explicitly create an application context using AnnotationConfigApplicationContext as SpringBoot handles that behind the scenes.
+We use SpringApplication.run() to start the application, and SpringBoot takes care of configuring the embedded web server and other necessary components.
+The @SpringBootApllication annotation alone brings in a lot of pre-configured features,including automatic component scanning and embedded server configuration, which would have required more steps in a traditional Spring setup.
+bean is a single object which is not reinitialised, and application context will provide that bean.
